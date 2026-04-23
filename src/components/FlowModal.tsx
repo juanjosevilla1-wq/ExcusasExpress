@@ -177,14 +177,12 @@ export default function FlowModal({ isOpen, onClose, planName = "Pase de Emergen
                   <span className="text-6xl font-black text-electric-blue tracking-tighter">{formattedPrice.split(',')[0]},{formattedPrice.split(',')[1]}</span>
                   <span className="text-3xl font-bold text-electric-blue">€</span>
                 </div>
-                {price < 1 && (
-                  <>
-                    <div className="text-sm font-bold text-slate-400 line-through decoration-red-400 decoration-2 mt-2">PVP: 0,50€</div>
-                    <div className="absolute -top-3 right-4 bg-green-500 text-white text-[11px] font-black px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider transform rotate-[5deg]">
-                      50% Off
-                    </div>
-                  </>
-                )}
+                <div className="text-sm font-bold text-slate-400 line-through decoration-red-400 decoration-2 mt-2">
+                  PVP: {(price * 2).toFixed(2).replace('.', ',')}€
+                </div>
+                <div className="absolute -top-3 right-4 bg-green-500 text-white text-[11px] font-black px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider transform rotate-[5deg]">
+                  50% Off
+                </div>
               </div>
 
               <div className="mt-auto w-full pb-safe space-y-3">
